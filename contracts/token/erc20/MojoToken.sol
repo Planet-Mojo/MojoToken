@@ -41,7 +41,7 @@ contract MojoToken is OFT {
     /// @notice Unpauses all transfers
     /// @dev This function can only be called if transfers are paused
     function unpauseTransfers() external onlyOwner {
-        require(areTransfersPaused, "Transfers are already paused");
+        require(areTransfersPaused, "Transfers are not paused");
         
         areTransfersPaused = false;
     }
@@ -68,15 +68,15 @@ contract MojoToken is OFT {
     /// @notice This function is called before every transfer
     /// @dev It checks if transfers are paused and if the sender is allowed to transfer
     /// If transfers are paused, only the allowed token sender can transfer
-    /// @param from The address of the sender
-    /// @param to The address of the recipient
-    /// @param amount The amount of tokens to transfer
+    /// @param _from The address of the sender
+    /// @param _to The address of the recipient
+    /// @param _amount The amount of tokens to transfer
     function _beforeTokenTransfer(
-        address from,
-        address to,
-        uint256 amount
+        address _from,
+        address _to,
+        uint256 _amount
     ) internal override {
-        require(!areTransfersPaused || (allowedTokenSender != address(0) && from == allowedTokenSender), "Transfer is not allowed");
-        super._beforeTokenTransfer(from, to, amount);
+        require(!areTransfersPaused || (allowedTokenSender != address(0) && _from == allowedTokenSender), "Transfer is not allowed");
+        super._beforeTokenTransfer(_from, _to, _amount);
     }
 }
