@@ -5,6 +5,11 @@ import {OFT} from "@layerzerolabs/lz-evm-oapp-v2/contracts/oft/OFT.sol";
 
 /// @title MojoToken
 /// @notice This is the token contract for the Mojo ERC20 token
+/// @dev It uses LayerZero's OFT token as a base for cross-chain transfers
+/// It also has the ability to pause and unpause transfers allowing only a specific account to transfer when paused
+/// This pausing ability can be disabled to permanently allow all transfers
+/// The pausing ability will be used for the initial air drop and will be disabled after that
+/// The token is minted with a maximum supply of 1,000,000,000 tokens
 contract MojoToken is OFT {
     uint256 public constant MAX_TOTAL_SUPPLY = 1_000_000_000 * 10 ** 18;
 
