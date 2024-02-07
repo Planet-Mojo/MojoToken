@@ -1,0 +1,30 @@
+node_modules
+bin
+build
+dist
+
+# Hardhat deploy
+deployments/localhost
+deployments/testnet
+
+# Hardhat files
+cache
+artifacts
+typechain-types
+
+# Foundry files
+out
+forge-cache
+
+# Yarn
+yarn-error.log
+
+#Environment
+.env
+
+# OpenZeppelin
+.openzeppelin/dev-*.json
+.openzeppelin/unknown-*.json
+.openzeppelin/.session
+coverage/
+coverage.json
