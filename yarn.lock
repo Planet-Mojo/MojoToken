@@ -924,6 +924,11 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@layerzerolabs/lz-evm-messagelib-v2@^2.0.25":
+  version "2.0.25"
+  resolved "https://registry.yarnpkg.com/@layerzerolabs/lz-evm-messagelib-v2/-/lz-evm-messagelib-v2-2.0.25.tgz#08df421a5a61719e00e30ba65ea58006aa1dbb21"
+  integrity sha512-qvWQr+zXkA4WeaMv96OlUC2Y22gF89YLDZ4Nr3BzfImP/51S3L7s7P9AJlMKGn3SSBeyswuFL/S5FgmZP9WN4g==
+
 "@layerzerolabs/lz-evm-oapp-v2@^2.0.25":
   version "2.0.25"
   resolved "https://registry.yarnpkg.com/@layerzerolabs/lz-evm-oapp-v2/-/lz-evm-oapp-v2-2.0.25.tgz#a10c89ec988630c712d115098ccc519f240f3436"
@@ -933,6 +938,11 @@
   version "2.0.25"
   resolved "https://registry.yarnpkg.com/@layerzerolabs/lz-evm-protocol-v2/-/lz-evm-protocol-v2-2.0.25.tgz#c070d2a4ba83d4db22198fc54cce9088ec1de69c"
   integrity sha512-EyyieamTgu2yFd5hLJ6B/vMCMKItGIHUPaa2X1NbdJTUEKyYWGupxXZUY7N/EXedfJhYdUVcNt1ZYjp6HgsYlw==
+
+"@layerzerolabs/test-devtools-evm-hardhat@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@layerzerolabs/test-devtools-evm-hardhat/-/test-devtools-evm-hardhat-0.1.3.tgz#0fff3497c4af7f6b91527eb9fd53fa1460c8d5a2"
+  integrity sha512-sbrwoBKRENsGLmbBeqzedzvVP2IYKGF277q4rJgrd9mzzQp2Ncpero00X53KfoSLKAeDYaNUWLGzaI9LQ22XZQ==
 
 "@ljharb/resumer@~0.0.1":
   version "0.0.1"
@@ -1027,6 +1037,11 @@
   dependencies:
     "@types/sinon-chai" "^3.2.3"
     "@types/web3" "1.0.19"
+
+"@openzeppelin/contracts-upgradeable@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@openzeppelin/contracts-upgradeable/-/contracts-upgradeable-5.0.1.tgz#ebc163cbed2de6b8b69bff628261d18deb912a81"
+  integrity sha512-MvaLoPnVcoZr/qqZP+4cl9piuR4gg0iIGgxVSZ/AL1iId3M6IdEHzz9Naw5Lirl4KKBI6ciTVnX07yL4dOMIJg==
 
 "@openzeppelin/contracts@4.6.0":
   version "4.6.0"
@@ -3724,6 +3739,10 @@ dotignore@~0.1.2:
   dependencies:
     minimatch "^3.0.4"
 
+"ds-test@github:dapphub/ds-test":
+  version "1.0.0"
+  resolved "https://codeload.github.com/dapphub/ds-test/tar.gz/e282159d5170298eb2455a6c05280ab5a73a4ef0"
+
 duplexer3@^0.1.4:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.5.tgz#0b5e4d7bad5de8901ea4440624c8e1d20099217e"
@@ -5028,6 +5047,11 @@ forever-agent@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/forever-agent/-/forever-agent-0.6.1.tgz#fbc71f0c41adeb37f96c577ad1ed42d8fdacca91"
   integrity sha512-j0KLYPhm6zeac4lz3oJ3o65qvgQCcPubiyotZrXqEaG4hNagNYO8qdlUrX5vwqv9ohqeT/Z3j6+yW067yWWdUw==
+
+forge-std@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/forge-std/-/forge-std-1.1.2.tgz#f4a0eda103538d56f9c563f3cd1fa2fd01bd9378"
+  integrity sha512-Wfb0iAS9PcfjMKtGpWQw9mXzJxrWD62kJCUqqLcyuI0+VRtJ3j20XembjF3kS20qELYdXft1vD/SPFVWVKMFOw==
 
 form-data@^2.2.0:
   version "2.5.1"
@@ -8808,6 +8832,14 @@ solhint@3.3.7:
     semver "^6.3.0"
   optionalDependencies:
     prettier "^1.14.3"
+
+solidity-bytes-utils@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/solidity-bytes-utils/-/solidity-bytes-utils-0.8.2.tgz#763d6a02fd093e93b3a97b742e97d540e66c29bd"
+  integrity sha512-cqXPYAV2auhpdKSTPuqji0CwpSceZDu95CzqSM/9tDJ2MoMaMsdHTpOIWtVw31BIqqGPNmIChCswzbw0tHaMTw==
+  dependencies:
+    ds-test "github:dapphub/ds-test"
+    forge-std "^1.1.2"
 
 solidity-comments-extractor@^0.0.7:
   version "0.0.7"
