@@ -16,7 +16,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
       "My Test OFT",
       "MYOFT", 
       LZ_MUMBAI_ENDPOINT_ADDRESS,
-      true
+      false
     ],
     log: true,
   });

@@ -22,6 +22,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     {
       eid: LZ_MUMBAI_ENDPOINT_ID,
       msgType: 1,
+      // https://docs.layerzero.network/contracts/oft#message-execution-options
       options: "0x00030100110100000000000000000000000000030d40"
     },
   ]);

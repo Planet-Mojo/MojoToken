@@ -61,9 +61,8 @@ contract MojoToken is OFT {
     /// @dev Removes the ability to pause transfers and unpauses all transfers
     /// This is a one-way function and cannot be undone
     function disablePausingAbility() external onlyOwner() {
-        if (isPausingAllowed) {
-            isPausingAllowed = false;
-        }
+        require(isPausingAllowed, "Pausing is not allowed");
+        isPausingAllowed = false;
 
         if (areTransfersPaused) {
             areTransfersPaused = false;
@@ -81,7 +80,7 @@ contract MojoToken is OFT {
         address _to,
         uint256 _amount
     ) internal override {
-        require(!areTransfersPaused || (allowedTokenSender != address(0) && _from == allowedTokenSender), "Transfer is not allowed");
+        require(!areTransfersPaused || (allowedTokenSender != address(0) && _from == allowedTokenSender), "Transfers are paused");
         super._beforeTokenTransfer(_from, _to, _amount);
     }
 }

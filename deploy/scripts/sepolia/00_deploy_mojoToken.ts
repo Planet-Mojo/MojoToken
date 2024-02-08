@@ -13,10 +13,10 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     from: deployer,
     args: [
       deployer,
-      "MyFirstOFT",
+      "My Test OFT",
       "MYOFT", 
       LZ_SEPOLIA_ENDPOINT_ADDRESS,
-      false
+      true
     ],
     log: true,
   });
