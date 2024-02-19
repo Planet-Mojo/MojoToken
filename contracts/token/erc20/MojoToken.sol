@@ -11,6 +11,12 @@ import {OFT} from "@layerzerolabs/lz-evm-oapp-v2/contracts/oft/OFT.sol";
 /// The pausing ability will be used for the initial air drop and will be disabled after that
 /// The token is minted with a maximum supply of 1,000,000,000 tokens
 contract MojoToken is OFT {
+    error TransfersPaused();
+    error PausingNotAllowed();
+    error TransfersNotPaused();
+    error TransfersAlreadyPaused();
+    error InvalidAddress();
+
     uint256 public constant MAX_TOTAL_SUPPLY = 1_000_000_000 * 10 ** 18;
 
     bool public areTransfersPaused;
@@ -37,8 +43,13 @@ contract MojoToken is OFT {
     /// @notice Pauses all transfers
     /// @dev This function can only be called if pausing is allowed and transfers are not already paused
     function pauseTransfers() external onlyOwner {
-        require(isPausingAllowed, "Pausing is not allowed");
-        require(!areTransfersPaused, "Transfers are already paused");
+        if (!isPausingAllowed) {
+            revert PausingNotAllowed();
+        }
+
+        if (areTransfersPaused) {
+            revert TransfersAlreadyPaused();
+        }
 
         areTransfersPaused = true;
     }
@@ -46,14 +57,18 @@ contract MojoToken is OFT {
     /// @notice Unpauses all transfers
     /// @dev This function can only be called if transfers are paused
     function unpauseTransfers() external onlyOwner {
-        require(areTransfersPaused, "Transfers are not paused");
-        
+        if (!areTransfersPaused) {
+            revert TransfersNotPaused();
+        }
         areTransfersPaused = false;
     }
 
     /// @notice Sets the allowed token sender
     /// @param _allowedTokenSender The address of the account that is allowed to send tokens when transfers are paused
     function setAllowedTokenSender(address _allowedTokenSender) external onlyOwner {
+        if (_allowedTokenSender == address(0)) {
+            revert InvalidAddress();
+        }
         allowedTokenSender = _allowedTokenSender;
     }
 
@@ -61,7 +76,10 @@ contract MojoToken is OFT {
     /// @dev Removes the ability to pause transfers and unpauses all transfers
     /// This is a one-way function and cannot be undone
     function disablePausingAbility() external onlyOwner() {
-        require(isPausingAllowed, "Pausing is not allowed");
+        if (!isPausingAllowed) {
+            revert PausingNotAllowed();
+        }
+
         isPausingAllowed = false;
 
         if (areTransfersPaused) {
@@ -80,7 +98,9 @@ contract MojoToken is OFT {
         address _to,
         uint256 _amount
     ) internal override {
-        require(!areTransfersPaused || (allowedTokenSender != address(0) && _from == allowedTokenSender), "Transfers are paused");
+        if (areTransfersPaused && _from != allowedTokenSender) {
+            revert TransfersPaused();
+        }
         super._beforeTokenTransfer(_from, _to, _amount);
     }
 }
