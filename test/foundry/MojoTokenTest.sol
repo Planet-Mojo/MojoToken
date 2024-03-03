@@ -101,12 +101,12 @@ contract MojoTokenTest is Test {
     function testRevertOnPausingWhenAlreadyPaused() external {
         _pauseTransfers();
 
-        vm.expectRevert("Transfers are already paused");
+        vm.expectRevert(MojoToken.TransfersAlreadyPaused.selector);
         _pauseTransfers();
     }
 
     function testRevertOnUnpausingWhenNotPaused() external {
-        vm.expectRevert("Transfers are not paused");
+        vm.expectRevert(MojoToken.TransfersNotPaused.selector);
         _unpauseTransfers();
     }
 
@@ -141,7 +141,7 @@ contract MojoTokenTest is Test {
         assertEq(token.isPausingAllowed(), false);
 
         // Attempt to pause transfers should fail after disabling pausing ability
-        vm.expectRevert("Pausing is not allowed");
+        vm.expectRevert(MojoToken.PausingNotAllowed.selector);
         vm.prank(owner);
         token.pauseTransfers();
     }
@@ -159,17 +159,17 @@ contract MojoTokenTest is Test {
     function testPauseTransfersDisablesAllTransfers() external {
         _pauseTransfers();
 
-        vm.expectRevert("Transfers are paused");
+        vm.expectRevert(MojoToken.TransfersPaused.selector);
         _send(owner, user1, 100);
         
-        vm.expectRevert("Transfers are paused");
+        vm.expectRevert(MojoToken.TransfersPaused.selector);
         _send(user1, user2, 100);
     }
 
     function testUnpauseTransfersEnablesAllTransfers() external {
         _pauseTransfers();
 
-        vm.expectRevert("Transfers are paused");
+        vm.expectRevert(MojoToken.TransfersPaused.selector);
         _send(owner, user1, 100);
 
         _unpauseTransfers();
@@ -195,10 +195,10 @@ contract MojoTokenTest is Test {
 
         _pauseTransfers();
 
-        vm.expectRevert("Transfers are paused");
+        vm.expectRevert(MojoToken.TransfersPaused.selector);
         _send(owner, user1, 100);
 
-        vm.expectRevert("Transfers are paused");
+        vm.expectRevert(MojoToken.TransfersPaused.selector);
         _send(user2, user1, 100);
     }
 
@@ -213,9 +213,9 @@ contract MojoTokenTest is Test {
         _pauseTransfers();
 
         // Disallowed token sender should not be able to transfer tokens when paused
-        vm.expectRevert("Transfers are paused");
+        vm.expectRevert(MojoToken.TransfersPaused.selector);
         _send(owner, user1, 100);
-        vm.expectRevert("Transfers are paused");
+        vm.expectRevert(MojoToken.TransfersPaused.selector);
         _send(user2, user1, 100);
 
         // Allowed token sender should be able to transfer tokens even when paused
@@ -236,7 +236,7 @@ contract MojoTokenTest is Test {
         _pauseTransfers();
 
         // Disallowed token sender should not be able to transfer tokens when paused
-        vm.expectRevert("Transfers are paused");
+        vm.expectRevert(MojoToken.TransfersPaused.selector);
         _send(user2, user1, 100);
 
         // Allowed token sender should be able to transfer tokens even when paused
@@ -252,7 +252,7 @@ contract MojoTokenTest is Test {
         assertEq(token.allowedTokenSender(), address(user2));
 
         // Disallowed token sender should not be able to transfer tokens when paused
-        vm.expectRevert("Transfers are paused");
+        vm.expectRevert(MojoToken.TransfersPaused.selector);
         _send(user1, user2, 100);
 
         // Allowed token sender should be able to transfer tokens even when paused
