@@ -20,6 +20,7 @@
     "verify:testnet": "hardhat run ./scripts/testnet/verifyContracts.ts --network testnet",
     "verify:polygon": "hardhat run ./scripts/polygon/verifyContracts.ts --network polygon",
     "verify:mumbai": "hardhat run ./scripts/mumbai/verifyContracts.ts --network mumbai",
+    "verify:ethereum": "hardhat run ./scripts/ethereum/verifyContracts.ts --network ethereum",
     "remap": "forge remappings > remappings.txt"
   },
   "files": [
