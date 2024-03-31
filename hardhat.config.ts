@@ -122,9 +122,20 @@ const config: HardhatUserConfig = {
       deploy: ["./deploy/scripts/sepolia"],
       timeout: 300000,
     },
+    ethereum: {
+      live: true,
+      gas: "auto",
+      gasPrice: "auto",
+      gasMultiplier: 1,
+      chainId: 1,
+      url: process.env.ETHEREUM_URL,
+      deploy: ["./deploy/scripts/ethereum"],
+      timeout: 300000,
+    },
   },
   etherscan: {
     apiKey: {
+      mainnet: process.env.ETHERSCAN_API_KEY,
       rinkeby: process.env.ETHERSCAN_API_KEY,
       polygon: process.env.POLYGONSCAN_API_KEY,
       polygonMumbai: process.env.POLYGONSCAN_API_KEY,
