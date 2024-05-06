@@ -924,22 +924,22 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@layerzerolabs/lz-evm-messagelib-v2@^2.0.25":
+"@layerzerolabs/lz-evm-messagelib-v2@2.0.25":
   version "2.0.25"
   resolved "https://registry.yarnpkg.com/@layerzerolabs/lz-evm-messagelib-v2/-/lz-evm-messagelib-v2-2.0.25.tgz#08df421a5a61719e00e30ba65ea58006aa1dbb21"
   integrity sha512-qvWQr+zXkA4WeaMv96OlUC2Y22gF89YLDZ4Nr3BzfImP/51S3L7s7P9AJlMKGn3SSBeyswuFL/S5FgmZP9WN4g==
 
-"@layerzerolabs/lz-evm-oapp-v2@^2.0.25":
+"@layerzerolabs/lz-evm-oapp-v2@2.0.25":
   version "2.0.25"
   resolved "https://registry.yarnpkg.com/@layerzerolabs/lz-evm-oapp-v2/-/lz-evm-oapp-v2-2.0.25.tgz#a10c89ec988630c712d115098ccc519f240f3436"
   integrity sha512-UW5HY1/2eXj1jOvqCnVhKxcdyaptFppeDFOo8AuF6ZfOj7xO6Dj/vaXaJYFHgDbxm1r9XwzcXH27xYPqVjCOTg==
 
-"@layerzerolabs/lz-evm-protocol-v2@^2.0.25":
+"@layerzerolabs/lz-evm-protocol-v2@2.0.25":
   version "2.0.25"
   resolved "https://registry.yarnpkg.com/@layerzerolabs/lz-evm-protocol-v2/-/lz-evm-protocol-v2-2.0.25.tgz#c070d2a4ba83d4db22198fc54cce9088ec1de69c"
   integrity sha512-EyyieamTgu2yFd5hLJ6B/vMCMKItGIHUPaa2X1NbdJTUEKyYWGupxXZUY7N/EXedfJhYdUVcNt1ZYjp6HgsYlw==
 
-"@layerzerolabs/test-devtools-evm-hardhat@^0.1.3":
+"@layerzerolabs/test-devtools-evm-hardhat@0.1.3":
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@layerzerolabs/test-devtools-evm-hardhat/-/test-devtools-evm-hardhat-0.1.3.tgz#0fff3497c4af7f6b91527eb9fd53fa1460c8d5a2"
   integrity sha512-sbrwoBKRENsGLmbBeqzedzvVP2IYKGF277q4rJgrd9mzzQp2Ncpero00X53KfoSLKAeDYaNUWLGzaI9LQ22XZQ==
@@ -1038,15 +1038,15 @@
     "@types/sinon-chai" "^3.2.3"
     "@types/web3" "1.0.19"
 
-"@openzeppelin/contracts-upgradeable@^5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@openzeppelin/contracts-upgradeable/-/contracts-upgradeable-5.0.1.tgz#ebc163cbed2de6b8b69bff628261d18deb912a81"
-  integrity sha512-MvaLoPnVcoZr/qqZP+4cl9piuR4gg0iIGgxVSZ/AL1iId3M6IdEHzz9Naw5Lirl4KKBI6ciTVnX07yL4dOMIJg==
+"@openzeppelin/contracts-upgradeable@4.9.5":
+  version "4.9.5"
+  resolved "https://registry.yarnpkg.com/@openzeppelin/contracts-upgradeable/-/contracts-upgradeable-4.9.5.tgz#572b5da102fc9be1d73f34968e0ca56765969812"
+  integrity sha512-f7L1//4sLlflAN7fVzJLoRedrf5Na3Oal5PZfIq55NFcVZ90EpV1q5xOvL4lFvg3MNICSDr2hH0JUBxwlxcoPg==
 
-"@openzeppelin/contracts@4.6.0":
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.6.0.tgz#c91cf64bc27f573836dba4122758b4743418c1b3"
-  integrity sha512-8vi4d50NNya/bQqCmaVzvHNmwHvS0OBKb7HNtuNwEE3scXWrP31fKQoGxNMT+KbzmrNZzatE3QK5p2gFONI/hg==
+"@openzeppelin/contracts@4.9.5":
+  version "4.9.5"
+  resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.9.5.tgz#1eed23d4844c861a1835b5d33507c1017fa98de8"
+  integrity sha512-ZK+W5mVhRppff9BE6YdR8CC52C8zAvsVAiWhEtQ5+oNxFE6h1WdeWo+FJSF8KKvtxxVYZ7MTP/5KoVpAU3aSWg==
 
 "@resolver-engine/core@^0.3.3":
   version "0.3.3"
