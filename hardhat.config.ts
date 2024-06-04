@@ -132,6 +132,16 @@ const config: HardhatUserConfig = {
       deploy: ["./deploy/scripts/ethereum"],
       timeout: 300000,
     },
+    amoy: {
+      live: true,
+      gas: "auto",
+      gasPrice: "auto",
+      gasMultiplier: 1,
+      chainId: 80002,
+      url: process.env.AMOY_URL,
+      deploy: ["./deploy/scripts/amoy"],
+      timeout: 300000,
+    },
   },
   etherscan: {
     apiKey: {
